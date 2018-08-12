@@ -1,0 +1,60 @@
+
+.taskList{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 15px;
+}
+
+.taskList--hidden{
+  display: none;
+}
+
+.radiocheck-group{
+  display: flex;
+  align-items: center;
+}
+.radiocheck-group input{
+  margin-right: 10px;
+  -webkit-appearance:none;
+  vertical-align:bottom;
+  width:22px;
+  height:24px;
+  border:1px  solid #333;
+}
+.radiocheck-group input:focus{
+  outline: 0;
+}
+
+.radiocheck-group input:checked{
+    background-color:#5C97BF;
+  }
+
+  .radiocheck-group input:checked:after{
+    position:absolute;
+    top:40%;
+    left:50%;
+    z-index:10;
+    content:"";
+    display:block;
+    width:11px;
+    height:5px;
+    transform:translate(-50%, -50%) rotate(-45deg);
+    border-left:2px solid #fff;
+    border-bottom:2px solid #fff
+  } 
+
+.taskX{
+  color: #e74c3c;
+  cursor: pointer;
+}
+
+input[type="checkbox"]
+{-webkit-appearance:none;
+  display:inline-block;
+  vertical-align:bottom;
+  width:22px;
+  height:24px;
+  border:1px #333 solid;
+  position:relative;z-index:9
+}

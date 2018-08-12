@@ -1,0 +1,16 @@
+header{
+  padding: 20px;
+  color: #ecf0f1;
+  font-size: 30px;
+  text-shadow: 1px 1px 1px rgba(1,1,1,0.8);
+}
+header h2{
+  margin: 0;
+  font-weight: 400;
+}
+
+header small{
+  color: #95A5A6;
+  font-size: 14px;
+  text-shadow: 1px 1px 1px rgba(1,1,1,0.3);
+}
