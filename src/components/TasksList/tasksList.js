@@ -9,6 +9,7 @@ class TasksList extends Component {
   }
 
   removeCurrentElement() {
+    this.props.data.isRemoved = true;
     this.currentElement.current.remove();
   }
 
@@ -17,13 +18,9 @@ class TasksList extends Component {
   timeConvert = (time) =>{
     var calendarDate = time.split('-');
     var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    console.log(calendarDate[2]);
     var dayordinal = parseInt(calendarDate[2].split('').slice(-1).join(),10);
-    console.log(dayordinal);
-    
     var dayCalendar = parseInt(calendarDate[2],10);
     var monthCalender = months[parseInt(calendarDate[1],10)-1];
-    console.log(monthCalender);
     var yearCalendar = calendarDate[0];
     var ordinal = '';
     if (dayordinal === 1){
@@ -35,21 +32,27 @@ class TasksList extends Component {
     } else {
       ordinal = 'th';
     }
-
-
     return `${monthCalender} ${dayCalendar}${ordinal}, ${yearCalendar}`
   }
+
+  isExpired (string, days) {
+    if (days < 0) {
+      return string + ' expired'
+    } else{
+      return string
+    }
+  } 
   
   render() {
 
     return (
-      <div className='taskList' ref={this.currentElement}>
+      <div index={this.props.data.key} className={this.isExpired((this.props.data.critical === true ? 'taskList critical':'taskList'), this.props.data.days) } ref={this.currentElement}>
         <div className='taskText'>
           <label className='radiocheck-group'>
             <input type='checkbox' value='on' />
-            <span className='taskText'>{this.props.data.text}</span>
+            <span className={this.props.data.critical === true ? 'taskText critical-text':'taskText' }>{this.props.data.text}</span>
           </label>
-          <span className='date'>{this.timeConvert(this.props.data.date)}</span>
+          <span className={this.props.data.critical === true ? 'critical-date' :'date'}>{this.timeConvert(this.props.data.date)}</span>
         </div>
         <div className='taskX' onClick={this.removeCurrentElement}>
           <i className='fa fa-remove fa-2x'></i>
