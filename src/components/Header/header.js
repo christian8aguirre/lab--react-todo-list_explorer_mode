@@ -7,7 +7,7 @@ class Header extends Component {
       <header>
         <h2>
           Todo List
-          <small> Normal Mode</small>
+          <small> Explorer Mode</small>
         </h2>
       </header>
     )

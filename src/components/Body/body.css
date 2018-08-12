@@ -1,16 +1,22 @@
 section{
   background-color: white;
-  border: 2px solid #2980b9;
+  border: 2px solid #f7d87c;
   padding: 20px;
 }
 
 .submit{
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add{
+  display: flex;
   justify-content: center;
   padding: 10px 0;
 }
 
-.submit input{
+.txtboxAdd{
   width: 222px;
   height: 38px;
   border: 1px solid #bfbfbf;
@@ -19,7 +25,7 @@ section{
   background: #fff;
 }
 
-.submit button {
+.btnAdd {
   background: #fff;
   border: 1px solid #333;
   padding: 0 22px;
@@ -27,4 +33,18 @@ section{
   font-size: 16px;
   cursor: pointer;
   color: #333;
+}
+
+.calendar{
+  padding: 10px 0;
+  width: 222px;
+  height: 38px;
+  border: 1px solid #bfbfbf;
+  font-size: 16px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.critical-group{
+  padding: 10px 0;
 }
